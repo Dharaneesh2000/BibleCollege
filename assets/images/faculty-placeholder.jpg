@@ -1,6 +1,0 @@
-<!-- Placeholder for faculty photos - replace with actual images -->
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="100" cy="100" r="100" fill="#e5e7eb"/>
-  <circle cx="100" cy="80" r="30" fill="#9ca3af"/>
-  <path d="M40 160 Q100 130 160 160 L160 200 L40 200 Z" fill="#9ca3af"/>
-</svg>

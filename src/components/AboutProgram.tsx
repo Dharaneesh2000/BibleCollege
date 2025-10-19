@@ -8,12 +8,12 @@ const AboutProgram = () => {
   ]
 
   return (
-    <section className="relative text-white overflow-hidden">
-      {/* Slanted top edge */}
-      <div className="absolute top-0 left-0 w-full h-20 bg-white transform -skew-y-1 origin-top-left z-10"></div>
+    <section className="relative text-white overflow-hidden" style={{ backgroundColor: '#15133D' }}>
+      {/* Improved slanted top edge */}
+      <div className="absolute top-0 left-0 w-full h-24 bg-white transform -skew-y-2 origin-top-left z-10"></div>
       
       {/* Main content with slanting design */}
-      <div className="relative bg-bible-blue pt-20 pb-16">
+      <div className="relative pt-24 pb-16" style={{ backgroundColor: '#15133D' }}>
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Text content */}
@@ -55,8 +55,19 @@ const AboutProgram = () => {
                 </div>
               </div>
               
-              {/* Decorative dashed line */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 border-2 border-white border-dashed border-t-0 border-r-0 opacity-50"></div>
+              {/* Decorative dotted lines - L shape in top-right corner with rounded edges */}
+              <div className="absolute -top-7 -right-7 w-20 h-20">
+                {/* Horizontal dotted line with rounded ends */}
+                <div className="absolute top-4 left-4 w-12 h-1 bg-white opacity-70 rounded-full" style={{
+                  background: 'repeating-linear-gradient(to right, white 0px, white 4px, transparent 4px, transparent 8px)',
+                  backgroundSize: '8px 1px'
+                }}></div>
+                {/* Vertical dotted line with rounded ends */}
+                <div className="absolute top-4 right-4 w-1 h-12 bg-white opacity-70 rounded-full" style={{
+                  background: 'repeating-linear-gradient(to bottom, white 0px, white 4px, transparent 4px, transparent 8px)',
+                  backgroundSize: '1px 8px'
+                }}></div>
+              </div>
             </div>
           </div>
         </div>
