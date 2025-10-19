@@ -1,25 +1,25 @@
 const WhyChooseUs = () => {
   const features = [
     {
-      icon: "/assets/images/BiblicalFoundation.png",
+      icon: "/images/BiblicalFoundation.png",
       title: "Biblical Foundation",
       description: "Our programs are recognized globally, opening doors to international opportunities.",
       color: "bg-orange-500"
     },
     {
-      icon: "/assets/images/GlobalMissionFocus.png",
+      icon: "/images/GlobalMissionFocus.png",
       title: "Global Mission Focus",
       description: "Enhance your career prospects with our industry-focused curriculum.",
       color: "bg-green-500"
     },
     {
-      icon: "/assets/images/vibrantCommunity.png",
+      icon: "/images/vibrantCommunity.png",
       title: "Vibrant Community",
       description: "Learn from leading experts and practitioners in your field.",
       color: "bg-blue-500"
     },
     {
-      icon: "/assets/images/ExpertFaculty.png",
+      icon: "/images/ExpertFaculty.png",
       title: "Expert Faculty",
       description: "Engage with cutting-edge research and real-world projects.",
       color: "bg-purple-500"

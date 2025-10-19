@@ -29,7 +29,7 @@ const ContactSection = () => {
       {/* Background image */}
       <div className="absolute inset-0">
         <img 
-          src="/assets/images/GetInTouch.png" 
+          src="/images/GetInTouch.png" 
           alt="Get in Touch Background" 
           className="w-full h-full object-cover"
         />

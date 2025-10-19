@@ -9,7 +9,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/assets/images/Logo.png"
+              src="/images/Logo.png"
               alt="Word Bible College Logo" 
               className="w-12 h-12"
             />

@@ -6,7 +6,7 @@ const HeroSection = () => {
       {/* Banner Image */}
       <div className="w-full">
         <img 
-          src="/assets/images/BannerImage.png" 
+          src="/images/BannerImage.png" 
           alt="Word Bible College Banner" 
           className="w-full h-auto object-cover"
         />

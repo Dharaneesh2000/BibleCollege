@@ -12,7 +12,7 @@ const CourseCatalog = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
                   <img 
-                    src="/assets/images/pdf-icon.svg" 
+                    src="/images/pdf-icon.svg" 
                     alt="PDF Icon" 
                     className="w-8 h-8"
                   />

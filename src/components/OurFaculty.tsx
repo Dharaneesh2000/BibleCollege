@@ -50,7 +50,7 @@ const OurFaculty = () => {
           {/* Add Filament.png outside the last card */}
           <div className="absolute -top-2 -right-2 z-10">
             <img 
-              src="/assets/images/Filment.png" 
+              src="/images/Filment.png" 
               alt="Filament" 
               className="w-8 h-8"
             />

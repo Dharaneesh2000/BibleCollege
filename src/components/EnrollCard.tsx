@@ -12,7 +12,7 @@ const EnrollCard = () => {
         {/* Certificate image */}
         <div className="mb-6">
           <img 
-            src="/assets/images/Certificate.png" 
+            src="/images/Certificate.png" 
             alt="Bachelor of Theology Certificate" 
             className="w-full h-auto rounded-lg shadow-lg"
           />

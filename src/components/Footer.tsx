@@ -7,7 +7,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <img 
-                src="/assets/images/Logo.png" 
+                src="/images/Logo.png" 
                 alt="Word Bible College Logo" 
                 className="w-12 h-12"
               />
