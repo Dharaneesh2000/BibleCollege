@@ -3,22 +3,22 @@ const OurFaculty = () => {
     {
       name: "Sam Matthews",
       title: "Founder",
-      image: "/assets/images/OurFaculty.png"
+      image: "/images/OurFaculty.png"
     },
     {
       name: "Sam Matthews",
       title: "Founder",
-      image: "/assets/images/OurFaculty.png"
+      image: "/images/OurFaculty.png"
     },
     {
       name: "Sam Matthews",
       title: "Founder",
-      image: "/assets/images/OurFaculty.png"
+      image: "/images/OurFaculty.png"
     },
     {
       name: "Sam Matthews",
       title: "Founder",
-      image: "/assets/images/OurFaculty.png"
+      image: "/images/OurFaculty.png"
     }
   ]
 
