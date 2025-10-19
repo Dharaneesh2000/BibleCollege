@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Logo from '../../assets/images/Logo.png'
+// import Logo from '../../assets/images/Logo.png'
 
 const Header = () => {
   return (
@@ -9,7 +9,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src={Logo}
+              src="/assets/images/Logo.png"
               alt="Word Bible College Logo" 
               className="w-12 h-12"
             />

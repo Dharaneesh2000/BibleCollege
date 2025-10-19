@@ -1,4 +1,4 @@
-import BannerImage from '../../assets/images/BannerImage.png'
+// import BannerImage from '../../assets/images/BannerImage.png'
 
 const HeroSection = () => {
   return (
@@ -6,7 +6,7 @@ const HeroSection = () => {
       {/* Banner Image */}
       <div className="w-full">
         <img 
-          src={BannerImage} 
+          src="/assets/images/BannerImage.png" 
           alt="Word Bible College Banner" 
           className="w-full h-auto object-cover"
         />
