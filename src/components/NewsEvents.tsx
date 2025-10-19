@@ -4,21 +4,21 @@ const NewsEvents = () => {
       title: "Annual Theological Conference 2024",
       date: "October 26, 2023",
       description: "Join us for our annual theological conference featuring renowned speakers and thought-provoking discussions on contemporary issues in Christian ministry.",
-      image: "/assets/images/news-placeholder.jpg",
+      image: "/assets/images/Events.png",
       readMore: "#"
     },
     {
       title: "New Biblical Studies Program Launch",
       date: "November 15, 2023",
       description: "We're excited to announce the launch of our enhanced Biblical Studies program with new courses and practical learning opportunities.",
-      image: "/assets/images/news-placeholder.jpg",
+      image: "/assets/images/Events.png",
       readMore: "#"
     },
     {
       title: "Student Ministry Outreach Success",
       date: "December 3, 2023",
       description: "Our students successfully completed their community outreach program, making a positive impact in local neighborhoods.",
-      image: "/assets/images/news-placeholder.jpg",
+      image: "/assets/images/Events.png",
       readMore: "#"
     }
   ]
