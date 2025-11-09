@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header
       className="text-white shadow-lg"
-      style={{ backgroundColor: '#1E1C52' }}
+      style={{ backgroundColor: '#1E1C52', fontFamily: "'DM Sans', sans-serif" }}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">

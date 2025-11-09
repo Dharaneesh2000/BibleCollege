@@ -1,43 +1,79 @@
+import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+
 const CourseRequirements = () => {
   const requirements = [
-    "12th Grade Completion Certificate",
-    "Minimum 80% aggregate marks", 
-    "Clearance certificate from previous institution"
-  ]
+    {
+      icon: <SchoolOutlinedIcon sx={{ fontSize: 28, color: "#155DFC" }} />,
+      title: "12th Grade Completion Certificate",
+      bgColor: "#EFF6FF",
+      borderColor: "#155DFC",
+    },
+    {
+      icon: <WorkspacePremiumOutlinedIcon sx={{ fontSize: 28, color: "#00A63E" }} />,
+      title: "Minimum 50% aggregate marks",
+      bgColor: "#F0FDF4",
+      borderColor: "#00A63E",
+    },
+    {
+      icon: <DescriptionOutlinedIcon sx={{ fontSize: 28, color: "#9810FA" }} />,
+      title: "Character certificate from previous institution",
+      bgColor: "#FAF5FF",
+      borderColor: "#9810FA",
+    },
+  ];
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-3">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-left">
-              Course Requirements
-            </h2>
-          
-            <div className="bg-gray-50 rounded-lg p-8 border border-gray-200">
-              <ul className="space-y-4">
-                {requirements.map((requirement, index) => (
-                  <li key={index} className="flex items-center space-x-4">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-lg text-gray-700">{requirement}</span>
-                  </li>
-                ))}
-              </ul>
+    <section
+      className="bg-white"
+      style={{ paddingTop: "0", paddingBottom: "4rem" }}
+      id="course-requirements"
+    >
+      <h2
+        className="mb-12"
+        style={{
+          fontSize: "26px",
+          fontWeight: 700,
+          color: "#333333",
+          fontFamily: "Montserrat, sans-serif",
+        }}
+      >
+        Course Requirements
+      </h2>
+
+      <div style={{ background: "#F9FAFB" }} className="rounded-lg p-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {requirements.map((requirement, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 flex items-center space-x-4"
+            >
+              <div
+                className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{
+                  background: requirement.bgColor,
+                }}
+              >
+                {requirement.icon}
+              </div>
+              <p
+                className="leading-relaxed"
+                style={{
+                  fontSize: "14px",
+                  fontWeight: 600,
+                  color: "#0A0A0A",
+                  fontFamily: "Montserrat, sans-serif",
+                }}
+              >
+                {requirement.title}
+              </p>
             </div>
-          </div>
-          
-          {/* Right side - Empty space to align with card above */}
-          <div className="lg:col-span-2">
-            {/* This space aligns with the EnrollCard in CourseHero */}
-          </div>
+          ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default CourseRequirements
+export default CourseRequirements;

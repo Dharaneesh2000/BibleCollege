@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import TestimonialsBackground from '../../assets/images/Background.png'
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,8 +43,17 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 relative overflow-hidden bg-gradient-to-r from-blue-900 to-purple-900">
-      <div className="container mx-auto px-4">
+    <section
+      className="py-16 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url(${TestimonialsBackground})`,
+      }}
+    >
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-[#1a1654]/80"></div>
+
+      {/* Content */}
+      <div className="relative container mx-auto px-4">
         {/* Section header */}
         <div className="flex items-start justify-between mb-12">
           <div>

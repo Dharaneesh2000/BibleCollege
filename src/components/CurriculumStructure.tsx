@@ -1,19 +1,14 @@
+import { useState } from "react";
 
 const CurriculumStructure = () => {
+  const [expandedYear, setExpandedYear] = useState(1);
+
   const years = [
     {
       year: "1st year",
       title: "Foundations of Theology & Scripture",
-      topics: [
-        "Introduction to Biblical Studies",
-        "Old Testament Survey",
-        "New Testament Survey",
-        "Systematic Theology I",
-        "Church History I",
-        "Christian Ethics",
-        "Spiritual Formation",
-        "Introduction to Ministry"
-      ]
+      topics: [],
+      color: "#2B7FFF",
     },
     {
       year: "2nd year",
@@ -24,94 +19,118 @@ const CurriculumStructure = () => {
         "Basics of Christian Theology",
         "Life and Ministry of Jesus Christ",
         "History of Christianity (Early Church)",
-        "Christian Spiritual Formation"
-      ]
+        "Christian Spiritual Formation",
+      ],
+      color: "#60A563",
     },
     {
       year: "3rd year",
       title: "Advanced Biblical & Practical Studies",
-      topics: [
-        "Advanced Old Testament Studies",
-        "Advanced New Testament Studies",
-        "Systematic Theology II",
-        "Church History II",
-        "Pastoral Care & Counseling",
-        "Homiletics & Preaching",
-        "Christian Apologetics",
-        "Missions & Evangelism"
-      ]
+      topics: [],
+      color: "#AD46FF",
     },
     {
       year: "4th year",
       title: "Specialization & Research",
-      topics: [
-        "Thesis Research & Writing",
-        "Advanced Ministry Practicum",
-        "Leadership & Administration",
-        "Contemporary Issues in Theology",
-        "Biblical Languages (Greek/Hebrew)",
-        "Church Planting & Growth",
-        "Christian Education",
-        "Capstone Project"
-      ]
-    }
-  ]
+      topics: [],
+      color: "#F0B100",
+    },
+  ];
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+    <section
+      className="bg-white"
+      style={{ paddingTop: "0", paddingBottom: "4rem" }}
+    >
+      <h2
+        className="mb-12"
+        style={{
+          fontSize: "26px",
+          fontWeight: 700,
+          color: "#333333",
+          fontFamily: "Montserrat, sans-serif",
+        }}
+      >
+        Curriculum Structure
+      </h2>
 
-          {/* Left section */}
-          <div className="lg:col-span-3">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-left">
-              Curriculum Structure
-            </h2>
-
-            <div className="space-y-8">
-              {years.map((year, index) => (
-                <div key={index} className="border-b border-gray-200 pb-8 last:border-b-0">
-                  <div className="flex items-start space-x-6">
-                    {/* Year badge */}
-                    <div className="flex-shrink-0">
-                      <span className="inline-block bg-bible-gold text-bible-blue px-4 py-2 rounded-lg font-semibold text-sm">
-                        {year.year}
-                      </span>
-                    </div>
-
-                    {/* Year content */}
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                        {year.title}
-                      </h3>
-
-                      {/* Topics list */}
-                      {year.topics.length > 0 && (
-                        <ul className="space-y-2">
-                          {year.topics.map((topic, topicIndex) => (
-                            <li key={topicIndex} className="flex items-center space-x-3">
-                              <div className="w-2 h-2 bg-bible-blue rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-700">{topic}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  </div>
+      <div style={{ background: "#F9FAFB" }} className="rounded-lg p-6">
+        <div className="space-y-4">
+          {years.map((yearData, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <button
+                onClick={() =>
+                  setExpandedYear(expandedYear === index ? -1 : index)
+                }
+                className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition-colors"
+              >
+                <div className="flex items-center space-x-4">
+                  <span
+                    className="text-white px-4 py-1.5 rounded-full text-sm font-semibold"
+                    style={{ backgroundColor: yearData.color }}
+                  >
+                    {yearData.year}
+                  </span>
+                  <h3
+                    className="text-left"
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: 600,
+                      color: "#333333",
+                      fontFamily: "Montserrat, sans-serif",
+                    }}
+                  >
+                    {yearData.title}
+                  </h3>
                 </div>
-              ))}
+                <svg
+                  className={`w-6 h-6 text-gray-600 transition-transform ${
+                    expandedYear === index ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {expandedYear === index && yearData.topics.length > 0 && (
+                <div className="px-6 pb-6 border-t border-gray-100">
+                  <ul className="space-y-3 mt-4">
+                    {yearData.topics.map((topic, topicIndex) => (
+                      <li key={topicIndex} className="flex items-start space-x-3">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0 mt-2"></div>
+                        <span
+                          style={{
+                            fontSize: "18px",
+                            fontWeight: 500,
+                            color: "#333333",
+                            fontStyle: "italic",
+                            fontFamily: "Montserrat, sans-serif",
+                          }}
+                        >
+                          {topic}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
-          </div>
-
-          {/* Right side (empty space for layout balance) */}
-          <div className="lg:col-span-2">
-            {/* Aligns with EnrollCard or any future content */}
-          </div>
-
+          ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default CurriculumStructure
+export default CurriculumStructure;
