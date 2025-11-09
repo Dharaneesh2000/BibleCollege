@@ -1,84 +1,111 @@
-import { useState } from 'react'
+import { useState } from "react";
+import GITMail from "/images/GITMail.png";
+import GITPhone from "/images/GITPhone.png";
+import GITHome from "/images/GITHome.png";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    courseType: '',
-    select: ''
-  })
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    courseType: "",
+    select: "",
+  });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-  }
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+  };
 
   return (
-    <section id="contact" className="section-padding text-white relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-16 text-white relative overflow-hidden"
+    >
       {/* Background image */}
       <div className="absolute inset-0">
-        <img 
-          src="/images/GetInTouch.png" 
-          alt="Get in Touch Background" 
+        <img
+          src="/images/GetInTouch.png"
+          alt="Get in Touch Background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-0"></div>
       </div>
 
-      <div className="container-custom relative">
+      <div className="container mx-auto px-4 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left side - Contact info */}
           <div>
-            <h2 className="text-4xl font-bold mb-6">Get in touch with us</h2>
-            <p className="text-xl mb-8 text-gray-300">
-              Everything you need to know about our Bible College, programs, admissions, and life on campus — all in one place.
+            <div className="w-[94px] h-[7px] bg-white mb-6"></div>
+            <h2 className="text-[38px] font-[700] mb-6 text-white">
+              Get in touch with us
+            </h2>
+            <p className="text-[18px] font-[400] mb-8 text-white leading-relaxed">
+              Everything you need to know about our Bible College, programs,
+              admissions, and life on campus — all in one place.
             </p>
 
             <div className="space-y-6">
               {/* Email */}
               <div className="flex items-center space-x-4 pb-4 border-b border-gray-600">
                 <div className="w-12 h-12 border border-white border-opacity-30 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+                  <img
+                    src={GITMail}
+                    alt="Email Icon"
+                    className="w-6 h-6 object-contain"
+                  />
                 </div>
                 <div>
-                  <p className="text-white">johnruban10@gmail.com</p>
+                  <p className="text-[22px] font-medium text-white">
+                    johnruban10@gmail.com
+                  </p>
                 </div>
               </div>
 
               {/* Phone */}
               <div className="flex items-center space-x-4 pb-4 border-b border-gray-600">
                 <div className="w-12 h-12 border border-white border-opacity-30 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+                  <img
+                    src={GITPhone}
+                    alt="Phone Icon"
+                    className="w-6 h-6 object-contain"
+                  />
                 </div>
                 <div>
-                  <p className="text-white">+91 97912 37955</p>
+                  <p className="text-[22px] font-medium text-white">
+                    +91 97912 37955
+                  </p>
                 </div>
               </div>
 
               {/* Address */}
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 border border-white border-opacity-30 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
+                  <img
+                    src={GITHome}
+                    alt="Address Icon"
+                    className="w-6 h-6 object-contain"
+                  />
                 </div>
                 <div>
-                  <p className="text-white">No. 24, Gandhi Street Anna Nagar, Chennai - 600040 Tamil Nadu, India</p>
+                  <p className="text-[22px] font-medium text-white">
+                    No. 24, Gandhi Street Anna Nagar, Chennai - 600040 Tamil
+                    Nadu, India
+                  </p>
                 </div>
               </div>
             </div>
@@ -157,6 +184,7 @@ const ContactSection = () => {
                   value={formData.select}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-bible-blue focus:border-transparent"
+                  style={{ color: "#00000099" }}
                 >
                   <option value="">Select</option>
                   <option value="bachelor">Bachelor of Theology</option>
@@ -167,16 +195,20 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                className="w-full bg-bible-blue text-white py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors duration-200"
+                className="group w-full bg-bible-blue text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-blue-800 transition-colors duration-300"
+                style={{ backgroundColor: "#15133D" }}
               >
-                Schedule a call
+                <span className="transition-transform duration-300 group-hover:-translate-x-2">
+                  Schedule a call
+                </span>
+                <ArrowRightAltIcon className="opacity-0 transform translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
               </button>
             </form>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ContactSection
+export default ContactSection;

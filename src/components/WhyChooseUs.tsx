@@ -1,60 +1,70 @@
+import BiblicalFoundation from '/images/BiblicalFoundation.png';
+import GlobalMissionFocus from '/images/GlobalMissionFocus.png';
+import VibrantCommunity from '/images/vibrantCommunity.png';
+import ExpertFaculty from '/images/ExpertFaculty.png';
+
 const WhyChooseUs = () => {
   const features = [
     {
-      icon: "/images/BiblicalFoundation.png",
+      icon: BiblicalFoundation,
       title: "Biblical Foundation",
-      description: "Our programs are recognized globally, opening doors to international opportunities.",
-      color: "bg-orange-500"
+      description: "Our curriculum is centered on the inerrant Word of God, providing a solid theological foundation for life and ministry.",
+      color: "bg-orange-50"
     },
     {
-      icon: "/images/GlobalMissionFocus.png",
+      icon: GlobalMissionFocus,
       title: "Global Mission Focus",
-      description: "Enhance your career prospects with our industry-focused curriculum.",
-      color: "bg-green-500"
+      description: "We emphasize equipping students to engage the world through missions and outreach in diverse contexts.",
+      color: "bg-[#E7F5E8]"
     },
     {
-      icon: "/images/vibrantCommunity.png",
+      icon: VibrantCommunity,
       title: "Vibrant Community",
-      description: "Learn from leading experts and practitioners in your field.",
-      color: "bg-blue-500"
+      description: "Join a Christ-centered community that supports spiritual growth, friendship, and collaboration.",
+      color: "bg-[#F0F5FF]"
     },
     {
-      icon: "/images/ExpertFaculty.png",
+      icon: ExpertFaculty,
       title: "Expert Faculty",
-      description: "Engage with cutting-edge research and real-world projects.",
-      color: "bg-purple-500"
+      description: "Learn from experienced faculty who combine academic excellence with ministry experience.",
+      color: "bg-[#F8EDFF]"
     }
-  ]
+  ];
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left side - Text content */}
           <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Why GWBC is Your Best Choice?
+            <div className="w-[94px] h-[7px] bg-[#012659] mb-6"></div>
+            <h2 className="text-[38px] font-[700] text-[#333333] leading-tight mb-6">
+              Why GWBC is Your <br /> Best Choice?
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
-            Discover an education that informs your mind, transforms your heart, and prepares you for impactful service. 
+            <p className="text-[18px] font-[400] text-[#333333] leading-relaxed">
+              Discover an education that informs your mind, transforms your heart, 
+              and prepares you for impactful service.
             </p>
           </div>
 
-          {/* Right side - Feature cards */}
+          {/* Right side - Feature cards in 2x2 grid */}
           <div className="grid grid-cols-2 gap-6">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4">
+              <div 
+                key={index} 
+                className={`${feature.color} p-6 rounded-[12px] shadow-sm`}
+              >
+                <div className="mb-4">
                   <img 
                     src={feature.icon} 
                     alt={feature.title}
-                    className="w-12 h-12 object-contain"
+                    className="w-16 h-16 object-contain"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-[20px] font-[600] text-[#333333] mb-3 leading-snug">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-[14px] font-[400] text-[#636363] leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -63,7 +73,7 @@ const WhyChooseUs = () => {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default WhyChooseUs
+export default WhyChooseUs;

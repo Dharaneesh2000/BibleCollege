@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndices, setOpenIndices] = useState<Set<number>>(new Set())
 
   const faqs = [
     {
@@ -31,46 +31,88 @@ const FAQ = () => {
   ]
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
+    setOpenIndices(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(index)) {
+        newSet.delete(index)
+      } else {
+        newSet.add(index)
+      }
+      return newSet
+    })
   }
 
+  const isOpen = (index: number) => openIndices.has(index)
+
   return (
-    <section className="section-padding bg-white">
-      <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">FAQs</h2>
-          <p className="text-xl text-gray-600">Frequently Asked Questions</p>
+    <section
+      className="py-16"
+      style={{
+        background: 'linear-gradient(181.77deg, #E8E7EC 1.5%, #DBD9FF 147.24%)'
+      }}
+    >
+      <div className="container mx-auto px-4">
+        {/* Title & Subtitle */}
+        <div className="text-left mb-12">
+          <div className="w-[94px] h-[7px] bg-[#012659] mb-6"></div>
+          <h2 className="text-[46px] font-[700] text-[#242424] mb-4">FAQs</h2>
+          <p className="text-[14px] font-[400] text-[#4B5563] leading-relaxed">
+            Everything you need to know about our Bible College, programs, admissions, and life on campus — all in one place
+          </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200" style={{ borderLeft: '3px solid #15133D' }}>
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
-                >
-                  <span className="font-medium text-gray-900">{faq.question}</span>
-                  <div className="w-6 h-6 flex items-center justify-center">
-                    {openIndex === index ? (
-                      <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
-                      </svg>
-                    ) : (
-                      <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                      </svg>
-                    )}
-                  </div>
-                </button>
-                {openIndex === index && (
-                  <div className="px-6 pb-4">
-                    <p className="text-gray-600">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+        {/* FAQ List */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200"
+              style={{ borderLeft: '3px solid #15133D' }}
+            >
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
+              >
+                <span className="font-[600] text-[18px] text-[#333333]">{faq.question}</span>
+                <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                  {isOpen(index) ? (
+                    <svg
+                      className="w-5 h-5 text-gray-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      className="w-5 h-5 text-gray-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                      />
+                    </svg>
+                  )}
+                </div>
+              </button>
+              {isOpen(index) && (
+                <div className="px-6 pb-4">
+                  <p className="text-[14px] font-[400] text-[#333333]">{faq.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,64 +1,85 @@
+import FacultyImg from "../../assets/images/OurFaculty.png";
+
 const OurFaculty = () => {
   const faculty = [
     {
       name: "Sam Matthews",
       title: "Founder",
-      image: "/images/OurFaculty.png"
+      image: FacultyImg,
     },
     {
       name: "Sam Matthews",
       title: "Founder",
-      image: "/images/OurFaculty.png"
+      image: FacultyImg,
     },
     {
       name: "Sam Matthews",
       title: "Founder",
-      image: "/images/OurFaculty.png"
+      image: FacultyImg,
     },
     {
       name: "Sam Matthews",
       title: "Founder",
-      image: "/images/OurFaculty.png"
-    }
-  ]
+      image: FacultyImg,
+    },
+  ];
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-custom">
+    <section className="py-16 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-8 md:px-12 lg:px-16">
+        {/* Section Heading */}
         <div className="text-left mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Faculty</h2>
-          <p className="text-xl text-gray-600">Learn from dedicated mentors who are experts in their fields and passionate about your spiritual and academic growth.</p>
+          <h2 className="text-[38px] font-[700] text-[#333333] mb-6">
+            Our Faculty
+          </h2>
+          <p className="text-[18px] font-[400] text-[#333333] leading-relaxed">
+            Learn from dedicated mentors who are experts in their fields and
+            passionate about your spiritual and academic growth.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        {/* Faculty Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          {/* Decorative dots in background */}
+          <div
+            className="absolute top-0 right-0 z-0 pointer-events-none"
+            style={{ transform: "translate(50%, -50%)" }}
+          >
+            <div className="grid grid-cols-10 gap-2">
+              {Array.from({ length: 100 }).map((_, i) => (
+                <div key={i} className="w-2 h-2 rounded-full bg-gray-300"></div>
+              ))}
+            </div>
+          </div>
+
+          {/* Faculty Cards */}
           {faculty.map((member, index) => (
-            <div key={index} className="text-center group">
-              <div className="relative overflow-hidden rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                <img 
-                  src={member.image} 
+            <div key={index} className="text-left group relative z-10">
+              <div className="relative overflow-hidden rounded-[12px] shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                <img
+                  src={member.image}
                   alt={member.name}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                {/* Add name overlay at bottom with padding */}
-                <div className="absolute bottom-2 left-2 right-2 bg-white bg-opacity-90 p-3 rounded-lg">
-                  <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
-                  <p className="text-sm text-gray-600">{member.title}</p>
+
+                {/* Overlay with blur only (no border) */}
+                <div
+                  className="absolute bottom-4 left-4 right-4 p-4 backdrop-blur-[4.7px] bg-white/80 rounded-[16px]"
+                >
+                  <h3 className="text-[18px] font-[700] text-[#333333] mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-[14px] font-[500] text-[#4C4C4C]">
+                    {member.title}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
-          {/* Add Filament.png outside the last card */}
-          <div className="absolute -top-2 -right-2 z-10">
-            <img 
-              src="/images/Filment.png" 
-              alt="Filament" 
-              className="w-8 h-8"
-            />
-          </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default OurFaculty
+export default OurFaculty;

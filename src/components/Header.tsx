@@ -1,52 +1,76 @@
-import { Link } from 'react-router-dom'
-// import Logo from '../../assets/images/Logo.png'
+import { Link, useLocation } from 'react-router-dom'
+import Logo from '../../assets/images/Logo.png' // ✅ imported instead of public path
 
 const Header = () => {
+  const location = useLocation()
+
+  const navItems = [
+    { label: 'Admission', path: '/' },
+    { label: 'Academics', path: '/academics' },
+    { label: 'Events', path: '/news' },
+    { label: 'Alumni', path: '/faculty' },
+    { label: 'About Us', path: '/about' }
+  ]
+
   return (
-    <header className="text-white shadow-lg" style={{ backgroundColor: '#1E1C52' }}>
+    <header
+      className="text-white shadow-lg"
+      style={{ backgroundColor: '#1E1C52' }}
+    >
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src="/images/Logo.png"
-              alt="Word Bible College Logo" 
-              className="w-12 h-12"
-            />
+            <img src={Logo} alt="Word Bible College Logo" className="w-12 h-12" />
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="hover:text-bible-gold transition-colors duration-200">
-              Admission
-            </Link>
-            <Link to="/academics/bachelor-of-theology" className="hover:text-bible-gold transition-colors duration-200">
-              Academics
-            </Link>
-            <Link to="/news" className="hover:text-bible-gold transition-colors duration-200">
-              Events
-            </Link>
-            <Link to="/faculty" className="hover:text-bible-gold transition-colors duration-200">
-              Alumni
-            </Link>
-            <Link to="/about" className="hover:text-bible-gold transition-colors duration-200">
-              About Us
-            </Link>
+          <nav className="hidden md:flex items-center space-x-2">
+            {navItems.map(item => {
+              // Check if current path matches or starts with item path (for nested routes)
+              const isActive = location.pathname === item.path || 
+                (item.path !== '/' && location.pathname.startsWith(item.path))
+              
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                    isActive
+                      ? 'bg-[#F4F4F436] text-white'
+                      : 'hover:text-bible-gold hover:bg-[#F4F4F436]'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
           </nav>
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
-            
-            {/* Apply Now Button */}
-            <button className="bg-bible-white text-bible-blue px-6 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors duration-200">
+            <Link
+              to="/contact"
+              className="bg-white text-bible-blue px-6 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors duration-200"
+            >
               Contact Us
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <button className="md:hidden p-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
         </div>
