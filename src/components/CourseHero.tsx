@@ -5,13 +5,13 @@ const CourseHero = () => {
       className="relative py-20 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${AcademicsBackground})`,
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+        minHeight: '100%',
       }}
     >
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-[#1a1654]/80"></div>
-
       {/* Content */}
-      <div className="relative container mx-auto px-4">
+      <div className="relative mx-auto px-3" style={{ maxWidth: '95%' }}>
         <div className="max-w-4xl">
           <h1 
             className="mb-6"

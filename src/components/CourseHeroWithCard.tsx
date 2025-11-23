@@ -8,7 +8,7 @@ const CourseHeroWithCard = () => {
       <CourseHero />
       
       {/* Enroll Card positioned to span across sections */}
-      <div className="absolute top-24 right-8 w-96 z-10 hidden lg:block">
+      <div className="absolute top-24 right-4 xl:right-8 w-[500px] z-10 hidden lg:block">
         <EnrollCard />
       </div>
     </div>

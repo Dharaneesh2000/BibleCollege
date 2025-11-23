@@ -50,8 +50,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left side - Contact info */}
           <div>
-            <div className="w-[94px] h-[7px] bg-white mb-6"></div>
-            <h2 className="text-[38px] font-[700] mb-6 text-white">
+            <h2 className="text-[38px] font-[700] mb-5 text-white">
               Get in touch with us
             </h2>
             <p className="text-[18px] font-[400] mb-8 text-white leading-relaxed">
@@ -62,7 +61,10 @@ const ContactSection = () => {
             <div className="space-y-6">
               {/* Email */}
               <div className="flex items-center space-x-4 pb-4 border-b border-gray-600">
-                <div className="w-12 h-12 border border-white border-opacity-30 rounded-full flex items-center justify-center flex-shrink-0">
+                <div 
+                  className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ background: "#FFFFFF1A" }}
+                >
                   <img
                     src={GITMail}
                     alt="Email Icon"
@@ -78,7 +80,10 @@ const ContactSection = () => {
 
               {/* Phone */}
               <div className="flex items-center space-x-4 pb-4 border-b border-gray-600">
-                <div className="w-12 h-12 border border-white border-opacity-30 rounded-full flex items-center justify-center flex-shrink-0">
+                <div 
+                  className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ background: "#FFFFFF1A" }}
+                >
                   <img
                     src={GITPhone}
                     alt="Phone Icon"
@@ -94,7 +99,10 @@ const ContactSection = () => {
 
               {/* Address */}
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 border border-white border-opacity-30 rounded-full flex items-center justify-center flex-shrink-0">
+                <div 
+                  className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ background: "#FFFFFF1A" }}
+                >
                   <img
                     src={GITHome}
                     alt="Address Icon"
@@ -103,7 +111,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-[22px] font-medium text-white">
-                    No. 24, Gandhi Street Anna Nagar, Chennai - 600040 Tamil
+                    No. 24, Gandhi Street<span className="hidden lg:inline"><br /></span> Anna Nagar, Chennai - 600040 Tamil
                     Nadu, India
                   </p>
                 </div>

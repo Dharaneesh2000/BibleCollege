@@ -3,7 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import BrowseCourses from './pages/BrowseCourses'
-import BachelorOfTheology from './pages/BachelorOfTheology'
+import MainCourse from './pages/mainCourse'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/academics" element={<BrowseCourses />} />
-          <Route path="/academics/bachelor-of-theology" element={<BachelorOfTheology />} />
+          <Route path="/academics/bachelor-of-theology" element={<MainCourse />} />
         </Routes>
       </main>
       <Footer />

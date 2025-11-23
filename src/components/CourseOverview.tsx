@@ -2,7 +2,7 @@ const CourseOverview = () => {
   return (
     <section className="bg-white" style={{ paddingTop: '4rem'}}>
       <h2 
-        className="mb-8"
+        className="mb-5"
         style={{ 
           fontSize: '26px', 
           fontWeight: 700, 

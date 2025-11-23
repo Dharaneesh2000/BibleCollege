@@ -7,7 +7,7 @@ const EnrollCard = () => {
   };
 
   return (
-    <div className="relative max-w-[380px] w-full">
+    <div className="relative max-w-[550px] w-full">
       {/* Single slanted background card */}
       <div 
         className="absolute inset-0 rounded-[23px] transform rotate-6"
@@ -41,10 +41,10 @@ const EnrollCard = () => {
           <div className="space-y-0">
             {/* Title */}
             <div 
-              className="flex items-center justify-between py-4"
+              className="flex items-center py-4"
               style={{ borderBottom: '0.47px solid #E6E6E6' }}
             >
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3" style={{ width: '40%' }}>
                 <svg
                   className="w-5 h-5 text-gray-700"
                   fill="none"
@@ -60,17 +60,17 @@ const EnrollCard = () => {
                 </svg>
                 <p className="text-sm font-medium text-gray-700">Title</p>
               </div>
-              <p className="text-sm text-gray-900 font-medium">
+              <p className="text-sm text-gray-900 font-medium text-left" style={{ width: '60%' }}>
                 Bachelor of Theology (B.Th.)
               </p>
             </div>
 
             {/* Duration */}
             <div 
-              className="flex items-center justify-between py-4"
+              className="flex items-center py-4"
               style={{ borderBottom: '0.47px solid #E6E6E6' }}
             >
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3" style={{ width: '40%' }}>
                 <svg
                   className="w-5 h-5 text-gray-700"
                   fill="none"
@@ -86,15 +86,15 @@ const EnrollCard = () => {
                 </svg>
                 <p className="text-sm font-medium text-gray-700">Duration:</p>
               </div>
-              <p className="text-sm text-gray-900 font-medium">4 Years</p>
+              <p className="text-sm text-gray-900 font-medium text-left" style={{ width: '60%' }}>4 Years</p>
             </div>
 
             {/* Languages */}
             <div 
-              className="flex items-center justify-between py-4"
+              className="flex items-center py-4"
               style={{ borderBottom: '0.47px solid #E6E6E6' }}
             >
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3" style={{ width: '40%' }}>
                 <svg
                   className="w-5 h-5 text-gray-700"
                   fill="none"
@@ -110,15 +110,15 @@ const EnrollCard = () => {
                 </svg>
                 <p className="text-sm font-medium text-gray-700">Languages</p>
               </div>
-              <p className="text-sm text-gray-900 font-medium">English & Tamil</p>
+              <p className="text-sm text-gray-900 font-medium text-left" style={{ width: '60%' }}>English & Tamil</p>
             </div>
 
             {/* Course Type */}
             <div 
-              className="flex items-center justify-between py-4"
+              className="flex items-center py-4"
               style={{ borderBottom: '0.47px solid #E6E6E6' }}
             >
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3" style={{ width: '40%' }}>
                 <svg
                   className="w-5 h-5 text-gray-700"
                   fill="none"
@@ -134,17 +134,17 @@ const EnrollCard = () => {
                 </svg>
                 <p className="text-sm font-medium text-gray-700">Course Type</p>
               </div>
-              <p className="text-sm text-gray-900 font-medium text-right">
+              <p className="text-sm text-gray-900 font-medium text-left" style={{ width: '60%' }}>
                 Full-time / Residential / On-Campus
               </p>
             </div>
 
             {/* Accredited by */}
             <div 
-              className="flex items-center justify-between py-4"
+              className="flex items-center py-4"
               style={{ borderBottom: '0.47px solid #E6E6E6' }}
             >
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3" style={{ width: '40%' }}>
                 <svg
                   className="w-5 h-5 text-gray-700"
                   fill="none"
@@ -160,7 +160,7 @@ const EnrollCard = () => {
                 </svg>
                 <p className="text-sm font-medium text-gray-700">Accredited by</p>
               </div>
-              <p className="text-sm text-gray-900 font-medium">Yes</p>
+              <p className="text-sm text-gray-900 font-medium text-left" style={{ width: '60%' }}>Yes</p>
             </div>
           </div>
 

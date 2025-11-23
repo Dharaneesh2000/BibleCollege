@@ -29,12 +29,12 @@ const OurFaculty = () => {
       <div className="container mx-auto px-8 md:px-12 lg:px-16">
         {/* Section Heading */}
         <div className="text-left mb-12">
-          <h2 className="text-[38px] font-[700] text-[#333333] mb-6">
+          <h2 className="text-[38px] font-[700] text-[#333333] mb-5">
             Our Faculty
           </h2>
           <p className="text-[18px] font-[400] text-[#333333] leading-relaxed">
             Learn from dedicated mentors who are experts in their fields and
-            passionate about your spiritual and academic growth.
+            passionate about your<span className="hidden lg:inline"><br /></span> spiritual and academic growth.
           </p>
         </div>
 

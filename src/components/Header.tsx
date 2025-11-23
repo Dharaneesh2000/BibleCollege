@@ -3,6 +3,9 @@ import Logo from '../../assets/images/Logo.png' // ✅ imported instead of publi
 
 const Header = () => {
   const location = useLocation()
+  
+  // Check if we're on the Bachelor of Theology page
+  const isAcademicsPage = location.pathname.startsWith('/academics/bachelor-of-theology')
 
   const navItems = [
     { label: 'Admission', path: '/' },
@@ -14,8 +17,11 @@ const Header = () => {
 
   return (
     <header
-      className="text-white shadow-lg"
-      style={{ backgroundColor: '#1E1C52', fontFamily: "'DM Sans', sans-serif" }}
+      className={`shadow-lg ${isAcademicsPage ? 'text-[#333333]' : 'text-white'}`}
+      style={{ 
+        backgroundColor: isAcademicsPage ? '#FFFFFF' : '#1E1C52', 
+        fontFamily: "'DM Sans', sans-serif" 
+      }}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
@@ -37,8 +43,12 @@ const Header = () => {
                   to={item.path}
                   className={`px-4 py-2 rounded-lg transition-all duration-200 ${
                     isActive
-                      ? 'bg-[#F4F4F436] text-white'
-                      : 'hover:text-bible-gold hover:bg-[#F4F4F436]'
+                      ? isAcademicsPage
+                        ? 'bg-[#333333] text-white'
+                        : 'bg-[#F4F4F436] text-white'
+                      : isAcademicsPage
+                        ? 'hover:bg-gray-100 text-[#333333]'
+                        : 'hover:text-bible-gold hover:bg-[#F4F4F436]'
                   }`}
                 >
                   {item.label}
@@ -51,7 +61,11 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <Link
               to="/contact"
-              className="bg-white text-bible-blue px-6 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors duration-200"
+              className={`px-6 py-2 rounded-lg font-medium transition-colors duration-200 ${
+                isAcademicsPage
+                  ? 'bg-[#333333] text-white hover:bg-[#555555]'
+                  : 'bg-white text-bible-blue hover:bg-yellow-500'
+              }`}
             >
               Contact Us
             </Link>

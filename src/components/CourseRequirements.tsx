@@ -31,7 +31,7 @@ const CourseRequirements = () => {
       id="course-requirements"
     >
       <h2
-        className="mb-12"
+        className="mb-5"
         style={{
           fontSize: "26px",
           fontWeight: 700,
@@ -47,7 +47,7 @@ const CourseRequirements = () => {
           {requirements.map((requirement, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 flex items-center space-x-4"
+              className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 flex items-center space-x-3"
             >
               <div
                 className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
@@ -58,12 +58,13 @@ const CourseRequirements = () => {
                 {requirement.icon}
               </div>
               <p
-                className="leading-relaxed"
+                className="flex-1 h-14 flex items-center"
                 style={{
                   fontSize: "14px",
                   fontWeight: 600,
                   color: "#0A0A0A",
                   fontFamily: "Montserrat, sans-serif",
+                  lineHeight: "1.4",
                 }}
               >
                 {requirement.title}

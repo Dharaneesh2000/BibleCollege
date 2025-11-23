@@ -47,43 +47,42 @@ const Testimonials = () => {
       className="py-16 relative overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${TestimonialsBackground})`,
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+        minHeight: '100%',
       }}
     >
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-[#1a1654]/80"></div>
-
       {/* Content */}
       <div className="relative container mx-auto px-4">
         {/* Section header */}
-        <div className="flex items-start justify-between mb-12">
-          <div>
-            <div className="w-[94px] h-[7px] bg-white mb-6"></div>
-            <h2 className="text-[38px] font-[700] mb-6 text-white">Testimonials</h2>
-            <p className="text-[18px] font-[400] text-white leading-relaxed">
-              Faith Journeys Shared by Our Graduates: Empowering Leaders, Equipping Servants, and Impacting Nations for Christ
+        <div className="mb-12">
+          <div className="w-[94px] h-[7px] bg-white mb-3"></div>
+          <h2 className="text-[38px] font-[700] mb-5 text-white">Testimonials</h2>
+          <div className="flex items-start justify-between gap-4">
+            <p className="text-[18px] font-[400] text-white leading-relaxed flex-1">
+              Faith Journeys Shared by Our Graduates: Empowering Leaders, Equipping Servants,<span className="hidden lg:inline"><br /></span> and Impacting Nations for Christ
             </p>
-          </div>
-
-          {/* Navigation arrows */}
-          <div className="flex space-x-2">
-            <button 
-              onClick={handlePrev}
-              disabled={currentIndex === 0}
-              className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center bg-[#ffffff33] hover:bg-[#ffffff55] transition-colors duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
-            >
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button 
-              onClick={handleNext}
-              disabled={currentIndex === maxIndex}
-              className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center bg-[#ffffff33] hover:bg-[#ffffff55] transition-colors duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
-            >
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            {/* Navigation arrows */}
+            <div className="flex space-x-2 flex-shrink-0">
+              <button 
+                onClick={handlePrev}
+                disabled={currentIndex === 0}
+                className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center bg-[#ffffff33] hover:bg-[#ffffff55] transition-colors duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button 
+                onClick={handleNext}
+                disabled={currentIndex === maxIndex}
+                className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center bg-[#ffffff33] hover:bg-[#ffffff55] transition-colors duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 

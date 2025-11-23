@@ -43,7 +43,7 @@ const CurriculumStructure = () => {
       style={{ paddingTop: "0", paddingBottom: "4rem" }}
     >
       <h2
-        className="mb-12"
+        className="mb-5"
         style={{
           fontSize: "26px",
           fontWeight: 700,
@@ -65,42 +65,46 @@ const CurriculumStructure = () => {
                 onClick={() =>
                   setExpandedYear(expandedYear === index ? -1 : index)
                 }
-                className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition-colors"
+                className="w-full p-6 hover:bg-gray-50 transition-colors"
               >
-                <div className="flex items-center space-x-4">
-                  <span
-                    className="text-white px-4 py-1.5 rounded-full text-sm font-semibold"
-                    style={{ backgroundColor: yearData.color }}
+                <div className="flex items-center justify-between">
+                  <div className="flex-1 min-w-0">
+                    <div className="mb-3 text-left">
+                      <span
+                        className="text-white px-4 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap inline-block"
+                        style={{ backgroundColor: yearData.color }}
+                      >
+                        {yearData.year}
+                      </span>
+                    </div>
+                    <h3
+                      className="text-left whitespace-nowrap overflow-hidden text-ellipsis"
+                      style={{
+                        fontSize: "22px",
+                        fontWeight: 600,
+                        color: "#333333",
+                        fontFamily: "Montserrat, sans-serif",
+                      }}
+                    >
+                      {yearData.title}
+                    </h3>
+                  </div>
+                  <svg
+                    className={`w-6 h-6 text-gray-600 transition-transform ${
+                      expandedYear === index ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    {yearData.year}
-                  </span>
-                  <h3
-                    className="text-left"
-                    style={{
-                      fontSize: "22px",
-                      fontWeight: 600,
-                      color: "#333333",
-                      fontFamily: "Montserrat, sans-serif",
-                    }}
-                  >
-                    {yearData.title}
-                  </h3>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
                 </div>
-                <svg
-                  className={`w-6 h-6 text-gray-600 transition-transform ${
-                    expandedYear === index ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
               </button>
 
               {expandedYear === index && yearData.topics.length > 0 && (

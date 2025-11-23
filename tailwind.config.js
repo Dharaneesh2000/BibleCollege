@@ -13,7 +13,9 @@ export default {
         'bible-white': '#ffffff',
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'sans': ['Montserrat', 'DM Sans', 'Inter', 'system-ui', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'dm-sans': ['DM Sans', 'sans-serif'],
       },
     },
   },
